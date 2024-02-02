@@ -1,6 +1,6 @@
 # egg-depot
 
-## Current progress can be found on url https://www.notion.so/Duck-Island-a3f7a03a3e8f478c94d671673a9854b6?p=8c843bcdd78241e6bb37c6fdc6b3e39c&pm=s
+## Current progress can be found on url https://www.notion.so/Eggsplore-Oasis-A-Nestacular-Adventure-a3f7a03a3e8f478c94d671673a9854b6
 
 Game overview: this game is supposed to contribute to the charity ducks unlimited, url: https://www.ducks.org/ . This game plans to play off of rubber duck decoding, a commonly known analogy to those studying computer science. The game will be an educational tool for players to learn about ducks. The game will be uploaded online (not an app) and all players will have a public icon that resembles a rubber duck. Players can have a choice of which type of duck they want their rubber duck to model. The game board will resemble a map with different islands, each island will have a module that teaches users about the different types of ducks found in that area.
 
