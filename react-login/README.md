@@ -1,6 +1,5 @@
 # React-Login Instructions
-# Make sure to install node.js and lowdb1 (npm install lowdb@1) before attempting to run!!
-## Look at the repositories readme to make sure you have the necessary things installed!!
+## Make sure to install node.js and lowdb1 (npm install lowdb@1) before attempting to run!!
 This code was created from the tutorial: https://clerk.com/blog/building-a-react-login-page-template so make sure to check here for a rundown if anything confuses you.
 
 to start:
