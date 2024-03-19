@@ -4,6 +4,7 @@ import Login from './login'
 import Welcome from './Welcome'
 import './App.css'
 import { useEffect, useState } from 'react'
+import './fonts/Frogie-Regular.ttf';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)

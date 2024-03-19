@@ -12,15 +12,17 @@ const Home = (props) => {
   return (
     <div className="mainContainer">
       <div className={'titleContainer'}>
+        <div id="titlebg">
         <div>Eggsplore Oasis: A Nestacular Adventure!</div>
+        </div>
       </div>
-      <div>~hosted by the eggxtra eggcellent eggregation</div>
+      <div>hosted by: the eggxtra eggcellent eggregation</div>
       <div className={'buttonContainer'}>
         <input
           className={'inputButton'}
           type="button"
           onClick={onButtonClick}
-          value='Log In'
+          value='Play!'
         />
       </div>
     </div>
