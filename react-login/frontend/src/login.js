@@ -89,6 +89,7 @@ const Login = (props) => {
 
   return (
     <div className={'mainContainer'}>
+      <div id="loginbg">
       <div className={'titleContainer'}>
         <div>Login</div>
       </div>
@@ -114,8 +115,9 @@ const Login = (props) => {
       </div>
       <br />
       <div className={'inputContainer'}>
-        <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log in'} />
+        <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log In'} />
       </div>
+    </div>
     </div>
   )
 }

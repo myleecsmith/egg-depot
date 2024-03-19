@@ -44,20 +44,23 @@
 .inputContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 
 .inputContainer > .errorLabel {
   color: red;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .inputBox {
   height: 48px;
   width: 400px;
+  background: white;
+  font-family: Comic Sans MS, Comic Sans, cursive;
   font-size: large;
-  border-radius: 8px;
-  border: 1px solid grey;
-  padding-left: 8px;
+  color: rgb(72, 132, 237);
+  border-radius: 25px;
+  border: 5px solid rgb(72, 132, 237);
+  padding-left: 14px;
 }
