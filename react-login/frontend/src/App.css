@@ -64,3 +64,11 @@
   border: 5px solid rgb(72, 132, 237);
   padding-left: 14px;
 }
+
+.home-bg {
+  background-image: url("./images/homebg.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

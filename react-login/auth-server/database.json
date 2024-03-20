@@ -3,6 +3,10 @@
     {
       "email": "mylee.smith@gmail.com",
       "password": "$2b$10$BeBexRtXX42rYRCyY4NFH.yWRajoRCi317n92HWjqRCLi80BeR9.2"
+    },
+    {
+      "email": "ducky1@gmail.com",
+      "password": "$2b$10$uOx9ulMUWxvdiQQgZANUr.YPaKUCYY/gyMgaUlTckQQR82Js0/Klm"
     }
   ]
 }
