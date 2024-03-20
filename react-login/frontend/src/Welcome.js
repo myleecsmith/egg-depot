@@ -1,5 +1,4 @@
 import React from 'react'
-import Duck from "./images/duck.jpg";
 import { useNavigate } from 'react-router-dom'
 
 const Welcome = (props) => {
@@ -11,19 +10,25 @@ const Welcome = (props) => {
   }
 
   return (
+    <div className="home-bg">
     <div className="mainContainer">
       <div className={'titleContainer'}>
-        <div>Here's a duck</div>
-        <img src={Duck} height= "400" width="600"/>
-      </div>
       <div className={'buttonContainer'}>
+        <input
+        className={'inputButton'}
+        type="island1"
+        onClick={onButtonClick}
+        value={loggedIn ? 'Island 1' : 'Log in'}>
+        
+        </input>
         <input
           className={'inputButton'}
           type="button"
           onClick={onButtonClick}
           value={loggedIn ? 'Log out' : 'Log in'}
         />
-        {loggedIn ? <div>Your email address is {email}</div> : <div />}
+      </div>
+      </div>
       </div>
     </div>
   )
