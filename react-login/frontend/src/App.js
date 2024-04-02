@@ -2,10 +2,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './home'
 import Login from './login'
 import Welcome from './Welcome'
+import AboutUs from './AboutUs'
 import './App.css'
 import { useEffect, useState } from 'react'
 import './fonts/Frogie-Regular.ttf';
-
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [email, setEmail] = useState('')
@@ -41,6 +41,7 @@ function App() {
           <Route path="/" element={<Home email={email}/>} />
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/Welcome" element={<Welcome email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
+          <Route path="/AboutUs" element={<AboutUs email={email}/>} />
         </Routes>
       </BrowserRouter>
     </div>

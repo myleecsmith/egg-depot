@@ -1,0 +1,18 @@
+html { 
+    font-size: 50px;
+}
+
+body {
+    margin: 0%;
+    /* The image used */
+    background-image: url("./images/surf.jpg");
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.wording {
+    text-align: center;
+}

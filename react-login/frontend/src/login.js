@@ -67,7 +67,7 @@ const Login = (props) => {
       return
     }
 
-    if (password.length < 7) {
+    if (password.length < 8) {
       setPasswordError('The password must be 8 characters or longer')
       return
     }
