@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen, toggle }) => {
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <ul>
         <li onClick={handleMenuItemClick1}>About Us</li>
-        <li>Menu Item 2</li>
+        <li><a href="https://donate.ducks.org/yearend/ye2023/donateonlinesecure.aspx?promokey=yearend23&id=13906&_ga=2.105476736.269927928.1712091537-2041326361.1712091536&_gl=1*5vwfw0*_ga*MjA0MTMyNjM2MS4xNzEyMDkxNTM2*_ga_2X0ECQZQ09*MTcxMjEwMDE0OS4zLjEuMTcxMjEwMDE1MS41OC4wLjA.">Donate</a></li>
         <li onClick={handleMenuItemClick3}>{loggedIn ? 'Log in' : 'Log out'}</li>
       </ul>
     </div>

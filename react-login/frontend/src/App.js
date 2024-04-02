@@ -36,7 +36,6 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home email={email}/>} />
