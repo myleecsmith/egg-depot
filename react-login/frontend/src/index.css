@@ -106,3 +106,12 @@ input[type='island1']:hover {
   width: 600px;
   height: 500px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+#page-wrap {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
