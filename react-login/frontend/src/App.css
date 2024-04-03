@@ -66,8 +66,15 @@
 }
 
 .home-bg {
-  background-image: url("./images/homebg.jpg");
+  background-image: url("./images/island.gif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.Flag1 {
+  position: fixed;
+  top: 34.7%;
+  left: 72%; /* Adjust this value */
+  transform: translateY(-34.7%) rotate(-35deg);
 }
