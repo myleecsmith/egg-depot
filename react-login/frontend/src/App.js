@@ -3,6 +3,7 @@ import Home from './home'
 import Login from './login'
 import Welcome from './Welcome'
 import AboutUs from './AboutUs'
+import Game1 from './Game1'
 import './App.css'
 import { useEffect, useState } from 'react'
 import './fonts/Frogie-Regular.ttf';
@@ -42,6 +43,7 @@ function App() {
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/Welcome" element={<Welcome email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
           <Route path="/AboutUs" element={<AboutUs email={email}/>} />
+          <Route path="/Game1" element={<Game1 email={email}/>} />
         </Routes>
       </BrowserRouter>
     </div>

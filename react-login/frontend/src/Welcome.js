@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './sidebar'; // Assuming Sidebar component is in the same directory
-import Button from './button'; // Assuming Button component is in the same directory
 import './App.css'; // Assuming you have a CSS file for styling
 import sound from './WelcomeSounds.wav';
+import sidebarButtonImage from './images/sidebar_button.png'; // Importing the sidebar button image
 
 const Welcome = (props) => {
   const { loggedIn } = props;
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
 
   useEffect(() => {
     const isAudioPlayingStr = localStorage.getItem('isAudioPlaying');
@@ -29,13 +29,20 @@ const Welcome = (props) => {
     navigate('/');
   };
 
+  const onButtonClick2 = () => {
+    navigate('/Game1');
+  };
+
   const toggleAudio = () => {
     setIsAudioPlaying(!isAudioPlaying);
   };
 
   return (
     <div className="welcome-page">
-      {/* Adding audio element for WelcomeSounds */}
+      {/* Main content */}
+      <div className="home-bg">
+        <div className="mainContainer">
+           {/* Adding audio element for WelcomeSounds */}
       {isAudioPlaying && (
         <audio autoPlay loop>
           <source src={sound} type="audio/wav" />
@@ -46,15 +53,17 @@ const Welcome = (props) => {
       <button onClick={toggleAudio}>
         {isAudioPlaying ? 'Pause Audio' : 'Play Audio'}
       </button>
-      {/* Button to toggle sidebar */}
-      <Button onClick={toggleSidebar} />
+      {/* Image button to toggle sidebar */}
+      <div className="Sidebarbtn1">
+      <img src={sidebarButtonImage} height={100} alt="Sidebar" onClick={toggleSidebar}/>
+      </div>
       {/* Sidebar component */}
       <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
-      {/* Main content */}
-      <div className="home-bg">
-        <div className="mainContainer">
           <div className="Flag1">
             <img src={require('./images/flag.gif')} alt="ducky" height={200} />
+          </div>
+          <div className="Duck_Sprite">
+            <img src={require('./images/duck_sprite1.gif')} alt="ducky" height={200} />
           </div>
           <div className={'titleContainer'}>
             <div className={'buttonContainer'}>
@@ -62,8 +71,8 @@ const Welcome = (props) => {
               <input
                 className={'inputButton'}
                 type="button"
-                onClick={onButtonClick}
-                value={loggedIn ? 'Island 1' : 'Log in'}
+                onClick={onButtonClick2}
+                value={'Island 1'}
               />
               <input
                 className={'inputButton'}

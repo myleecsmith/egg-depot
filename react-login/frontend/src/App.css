@@ -78,3 +78,44 @@
   left: 72%; /* Adjust this value */
   transform: translateY(-34.7%) rotate(-35deg);
 }
+
+.Duck_Sprite {
+  position: fixed;
+  top: 40%;
+  left: 9%; /* Adjust this value */
+  transform: translateY(-40%);
+}
+
+.Game1-bg {
+  background-image: url("./images/surfsup.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Duck_Sprite_g {
+  position: fixed;
+  top: 58%;
+  left: 6%; /* Adjust this value */
+  transform: translateY(-58%);
+}
+.surfboard {
+  position: fixed;
+  top: 80%;
+  left: 8%; /* Adjust this value */
+  transform: translateY(-80%);
+}
+
+.Sidebarbtn {
+  position: fixed;
+  top: 0%;
+  left: 0%; /* Adjust this value */
+  transform: translateY(0%);
+}
+
+.Sidebarbtn1 {
+  position: fixed;
+  top: 0%;
+  left: 0%; /* Adjust this value */
+  transform: translateY(0%);
+}
+
