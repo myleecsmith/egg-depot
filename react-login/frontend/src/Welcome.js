@@ -4,6 +4,8 @@ import Sidebar from './sidebar'; // Assuming Sidebar component is in the same di
 import './App.css'; // Assuming you have a CSS file for styling
 import sound from './WelcomeSounds.wav';
 import sidebarButtonImage from './images/sidebar_button.png'; // Importing the sidebar button image
+import soundOn from './images/sound_on2.png';
+import soundOff from './images/sound_off2.png';
 
 const Welcome = (props) => {
   const { loggedIn } = props;
@@ -25,11 +27,8 @@ const Welcome = (props) => {
     setIsOpen(!isOpen);
   };
 
-  const onButtonClick = () => {
-    navigate('/');
-  };
 
-  const onButtonClick2 = () => {
+  const onButtonClick = () => {
     navigate('/Game1');
   };
 
@@ -41,6 +40,9 @@ const Welcome = (props) => {
     <div className="welcome-page">
       {/* Main content */}
       <div className="home-bg">
+        <div className="titleContainer2">
+            <div>Welcome to the Island!</div>
+          </div>
         <div className="mainContainer">
            {/* Adding audio element for WelcomeSounds */}
       {isAudioPlaying && (
@@ -50,15 +52,11 @@ const Welcome = (props) => {
         </audio>
       )}
       {/* Button to toggle audio */}
-      <button onClick={toggleAudio}>
-        {isAudioPlaying ? 'Pause Audio' : 'Play Audio'}
-      </button>
-      {/* Image button to toggle sidebar */}
-      <div className="Sidebarbtn1">
-      <img src={sidebarButtonImage} height={100} alt="Sidebar" onClick={toggleSidebar}/>
+      <div className='audioContainer'>
+      <li onClick={toggleAudio}>
+        {isAudioPlaying ? <img src={soundOn} height={60}/> : <img src={soundOff} height={60}/>}
+      </li>
       </div>
-      {/* Sidebar component */}
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
           <div className="Flag1">
             <img src={require('./images/flag.gif')} alt="ducky" height={200} />
           </div>
@@ -71,17 +69,17 @@ const Welcome = (props) => {
               <input
                 className={'inputButton'}
                 type="button"
-                onClick={onButtonClick2}
-                value={'Island 1'}
-              />
-              <input
-                className={'inputButton'}
-                type="button"
                 onClick={onButtonClick}
-                value={loggedIn ? 'Log out' : 'Log in'}
+                value={'Play Trivia Surf!'}
               />
             </div>
           </div>
+          {/* Image button to toggle sidebar */}
+      <div className="Sidebarbtn1">
+      <img src={sidebarButtonImage} height={100} alt="Sidebar" onClick={toggleSidebar}/>
+      </div>
+      {/* Sidebar component */}
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
         </div>
       </div>
     </div>
