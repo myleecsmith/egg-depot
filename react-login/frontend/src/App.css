@@ -15,6 +15,16 @@
   justify-content: center;
 }
 
+.titleContainer2 {
+  font-size: 80px;
+  color: rgb(97, 72, 60);
+  font-weight: bolder;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  right: 15%;
+}
+
 .resultContainer,
 .historyItem {
   flex-direction: row;
@@ -54,14 +64,15 @@
 }
 
 .inputBox {
+  outline: none;
   height: 48px;
   width: 400px;
   background: white;
   font-family: Comic Sans MS, Comic Sans, cursive;
   font-size: large;
-  color: rgb(72, 132, 237);
+  color: rgb(79, 177, 184);
   border-radius: 25px;
-  border: 5px solid rgb(72, 132, 237);
+  border: 5px solid rgb(79, 177, 184);
   padding-left: 14px;
 }
 
@@ -119,3 +130,14 @@
   transform: translateY(0%);
 }
 
+.audioContainer {
+  position: absolute;
+  top: 89%;
+  right: 94.6%;
+
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: row;
+}

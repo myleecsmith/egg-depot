@@ -22,8 +22,8 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
-  background-color: rgb(115, 185, 241);
-  color:rgb(72, 132, 237);
+  background-color: rgb(102, 217, 225);
+  color:rgb(79, 177, 184);
   font-size: 24px;
   text-align: center;
 }
@@ -55,7 +55,7 @@ code {
 
 input[type='button'] {
   border: none;
-  background: rgb(72, 132, 237);
+  background: rgb(79, 177, 184);
   color: white;
   padding: 20px 60px;
   margin: 8px;
@@ -67,32 +67,12 @@ input[type='button'] {
 }
 
 input[type='button']:hover {
-  background: rgb(29, 104, 232);
-}
-
-input[type='island1'] {
-  border: none;
-  background: rgb(72, 132, 237);
-  color: white;
-  padding: 20px 60px;
-  margin: 8px;
-  font-family: 'Frogie';
-  font-size: 36px;
-  text-align: center;
-  border-radius: 30px;
-  cursor: pointer;
-  top: 45%;
-  left: 2%;
-  position: absolute;
-}
-
-input[type='island1']:hover {
-  background: rgb(29, 104, 232);
+  background: rgb(66, 150, 156);
 }
 
 #titlebg {
   border-radius: 50px;
-  background: rgb(165, 203, 246);
+  background: rgb(154, 237, 243);
   padding: 20px;
   width: 800px;
   height: 180px;
@@ -101,10 +81,18 @@ input[type='island1']:hover {
 
 #loginbg {
   border-radius: 50px;
-  background: rgb(165, 203, 246);
+  background: rgb(154, 237, 243);
   padding: 70px;
   width: 600px;
   height: 500px;
+}
+
+#aboutbg {
+  border-radius: 50px;
+  background: rgb(154, 237, 243);
+  padding: 20px;
+  width: 400px;
+  height: 600px;
 }
 
 * {

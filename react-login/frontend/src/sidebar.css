@@ -4,7 +4,7 @@
     left: -250px; /* initially hide the sidebar */
     width: 250px;
     height: 100%;
-    background-color: #333;
+    background-color: rgb(97, 72, 60);
     transition: left 0.3s ease;
   }
   
@@ -19,6 +19,7 @@
   
   .sidebar ul li {
     padding: 10px;
+    font-size: 28px;
     color: white;
   }
   
@@ -29,5 +30,34 @@
     z-index: 999;
   }
   
+  input[type='sidebarButton'] {
+    outline: none;
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-family: 'Frogie';
+    font-size: 28px;
+    text-align: center;
+    cursor: pointer;
+    width: 55%;
+    padding: 10px;
+  }
+
+  input[type='sidebarButton']:hover {
+    color: rgb(79, 177, 184);
+  }
+
+  .closeContainer {
+    position: absolute;
+    display: flex;
+    top: 20px;
+    right: 20px;
+  }
+
+  input[type='image'] {
+    margin: auto;
+    height: 25px;
+    align-items: right;
+  }
   /* Adjust the styles as needed */
   
