@@ -11,7 +11,7 @@ var db = low(adapter);
 // Initialize Express app
 const app = express();
 
-const dbURI = "mongodb+srv://devindubois03:lMRzhP3qH0o3rQR5@eggdata.oydljq9.mongodb.net/"
+const dbURI = "mongodb+srv://devindubois03:lMRzhP3qH0o3rQR5@eggdata.oydljq9.mongodb.net/EggDepotData"
 
 const mongoose = require('mongoose');
 
@@ -25,10 +25,10 @@ const jwtSecretKey = 'dsfdsfsdfdsvcsvdfgefg';
 // mongoose and mongo sandbox routes
 app.get('/add-user', (req, res) => {
   const user = new User({
-    User_ID: "12345678",
-    Username: "Testerman69",
+    User_ID: 123456789,
+    Username: "Testerman69123",
     donor: false,
-    Password: 'password123',
+    Password: 'password123123',
     Level: 1
   })
   user.save()
@@ -42,6 +42,8 @@ app.get('/add-user', (req, res) => {
 
 
 
+
+
 // Set up CORS and JSON middlewares
 app.use(cors());
 app.use(express.json());
@@ -51,7 +53,10 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (_req, res) => {
   res.send('Auth API.\nPlease use POST /auth & POST /verify for authentication');
 });
-
+//user routes
+app.get('/users', (req, res) => {
+  res.redirect('users');
+})
 // The auth endpoint that creates a new user record or logs a user based on an existing record
 app.post('/auth', (req, res) => {
     const { email, password } = req.body
