@@ -1,18 +1,46 @@
 // app.js
 const express = require('express');
 const bcrypt = require('bcrypt');
+const User = require('./models/user')
 var cors = require('cors');
 const jwt = require('jsonwebtoken');
 const low = require('lowdb')
 var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('./database.json');
 var db = low(adapter);
-
 // Initialize Express app
 const app = express();
 
+const dbURI = "mongodb+srv://devindubois03:lMRzhP3qH0o3rQR5@eggdata.oydljq9.mongodb.net/"
+
+const mongoose = require('mongoose');
+
+mongoose.connect(dbURI)
+  .then((result) => app.listen(3000))
+  .catch((err) => console.log(err));
+
 // Define a JWT secret key. This should be isolated by using env variables for security
 const jwtSecretKey = 'dsfdsfsdfdsvcsvdfgefg';
+
+// mongoose and mongo sandbox routes
+app.get('/add-user', (req, res) => {
+  const user = new User({
+    User_ID: "12345678",
+    Username: "Testerman69",
+    donor: false,
+    Password: 'password123',
+    Level: 1
+  })
+  user.save()
+  .then((result) => {
+    res.send(result)
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+})
+
+
 
 // Set up CORS and JSON middlewares
 app.use(cors());
