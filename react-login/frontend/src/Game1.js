@@ -87,19 +87,21 @@ function DuckTrivia() {
         setTimeout(() => {
           document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.remove('correct'); 
           document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.remove('incorrect');
-          if (answeredQuestions >= 9) {
-            gameOver();
-          }
           nextQuestion()}, 2000);  
     };
 
     const nextQuestion = () => {
-        
         answeredQuestions++;
+        if (answeredQuestions == 10) {
+          gameOver();
+        }
         console.log(`Total questions answered: ${answeredQuestions}`);
         timeLeft = 10;
         do {
           index = Math.floor(Math.random() * questions.length);
+          if (usedQuestions.length === questions.length) {
+            usedQuestions = [];
+          }
         } while (usedQuestions.includes(index));
 
         setCurrentQuestion(index);
