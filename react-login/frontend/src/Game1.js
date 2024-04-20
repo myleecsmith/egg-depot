@@ -5,6 +5,8 @@ import sound from './SurfnTurf.wav';
 import sidebarButtonImg from './images/sidebar_button.png';
 import soundOn from './images/sound_on2.png';
 import soundOff from './images/sound_off2.png';
+import judge from './images/judge.png';
+import judge1 from './images/judge1.png';
 let timer;
 const questions = [{question: "Which of the following is NOT a habitat that ducks live in?", options: ["Wetlands", "Grasslands", "Deserts", "Rivers"], answer: "Deserts"}, 
                    {question: "How long can ducks live on average?", options: ["10-20 years", "20-30 years", "30-40 years", "40-50 years"], answer: "10-20 years"}, 
@@ -227,7 +229,23 @@ function DuckTrivia() {
           <div className="Sidebarbtn">
             <img src={sidebarButtonImg} alt="sidebar button" height={100} onClick={toggleSidebar} />
           </div>
-          <div className="right-rectangle"></div>
+          <div className="Judgepannel">Judge Pannel</div>
+          <div className="judge">
+            <img src={judge} alt="duck" height={150} />
+            <p>Judge1 Score:</p>
+          </div>
+          <div className="judge1">
+            <img src={judge1} alt="duck" height={150} />
+            <p>Judge2 Score:</p>
+          </div>
+          <div className="judge2">
+            <img src={judge} alt="duck" height={150} />
+            <p>Judge3 Score:</p>
+          </div>
+          <div className="judge3">
+            <img src={judge1} alt="duck" height={150} />
+            <p>Judge4 Score:</p>
+          </div>
           {/* Sidebar component */}
           <Sidebar isOpen={isOpen} toggle={toggleSidebar} toggleAudio={toggleAudio} isAudioPlaying={isAudioPlaying} clearTimer={clearTimer} />
           {/* Main content */}

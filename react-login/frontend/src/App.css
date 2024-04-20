@@ -402,11 +402,95 @@ header {
   background-color: #085da3;
 }
 
-.right-rectangle {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 32%; /* Adjust width as needed */
-  background-color: black;
+/* Styles for the image container */
+.judge {
+  position: fixed; /* Change to relative positioning */
+  text-align: center;
+  top: 10%; /* Position it vertically in the middle */
+  left: 30%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the paragraph */
+.judge p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 88%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  font-size: 15px;
+  color: white; /* Set text color to white or appropriate color */
+  white-space: nowrap;
+}
+
+/* Styles for the image container */
+.judge1 {
+  position: fixed; /* Change to relative positioning */
+  text-align: center;
+  top: 10%; /* Position it vertically in the middle */
+  left: 40%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the paragraph */
+.judge1 p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 88%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  font-size: 15px;
+  color: white; /* Set text color to white or appropriate color */
+  white-space: nowrap;
+}
+
+/* Styles for the image container */
+.judge2 {
+  position: fixed; /* Change to relative positioning */
+  text-align: center;
+  top: 10%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the paragraph */
+.judge2 p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 88%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  font-size: 15px;
+  color: white; /* Set text color to white or appropriate color */
+  white-space: nowrap;
+}
+
+/* Styles for the image container */
+.judge3 {
+  position: fixed; /* Change to relative positioning */
+  text-align: center;
+  top: 10%; /* Position it vertically in the middle */
+  left: 60%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the paragraph */
+.judge3 p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 88%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  font-size: 15px;
+  color: white; /* Set text color to white or appropriate color */
+  white-space: nowrap;
+}
+
+.Judgepannel {
+  position : fixed;
+  width: 600px; /* adjust size as needed */
+  height: 200px; /* adjust size as needed */
+  background-color: #286ea8;
+  border-radius: 20px; /* adjust border radius for rounded corners */
+  position: absolute;
+  top: 13%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  color : white;
 }
