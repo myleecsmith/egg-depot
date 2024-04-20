@@ -4,6 +4,8 @@ import Sidebar from './sidebar';
 import './App.css';
 import sound from './SurfnTurf.wav';
 import sidebarButtonImg from './images/sidebar_button.png';
+import soundOn from './images/sound_on2.png';
+import soundOff from './images/sound_off2.png';
 
 const Game1 = (props) => {
   const { loggedIn } = props;
@@ -40,6 +42,18 @@ const Game1 = (props) => {
               Your browser does not support the audio element.
             </audio>
           )}
+          {/* Button to toggle audio */}
+          <div className='audioContainer'>
+          <li onClick={toggleAudio}>
+            {isAudioPlaying ? <img src={soundOn} height={35}/> : <img src={soundOff} height={35}/>}
+          </li>
+          </div>
+          <div className="surfboard">
+            <img src={require('./images/surfboard.png')} alt="surfboard" height={350} />
+          </div>
+          <div className="Duck_Sprite_g">
+            <img src={require('./images/duck_sprite1.gif')} alt="ducky" height={300} />
+          </div>
           {/* Sidebar button */}
           <div className="Sidebarbtn">
             <img src={sidebarButtonImg} alt="sidebar button" height={100} onClick={toggleSidebar} />
@@ -47,12 +61,6 @@ const Game1 = (props) => {
           {/* Sidebar component */}
           <Sidebar isOpen={isOpen} toggle={toggleSidebar} toggleAudio={toggleAudio} isAudioPlaying={isAudioPlaying} />
           {/* Main content */}
-          <div className="surfboard">
-            <img src={require('./images/surfboard.png')} alt="surfboard" height={350} />
-          </div>
-          <div className="Duck_Sprite_g">
-            <img src={require('./images/duck_sprite1.gif')} alt="ducky" height={300} />
-          </div>
           <div className={'titleContainer'}></div>
         </div>
       </div>

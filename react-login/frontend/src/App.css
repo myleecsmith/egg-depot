@@ -85,17 +85,25 @@
 
 .Flag1 {
   position: fixed;
-  top: 34.7%;
-  left: 72%; /* Adjust this value */
+  top: 24%;
+  left: 84%; /* Adjust this value */
   transform: translateY(-34.7%) rotate(-35deg);
 }
 
 .Duck_Sprite {
   position: fixed;
-  top: 40%;
+  top: 37%;
   left: 9%; /* Adjust this value */
   transform: translateY(-40%);
 }
+
+.Duck_Sprite2 {
+  position: fixed;
+  top: 35%;
+  left: 72%; /* Adjust this value */
+  transform: translateY(-40%) scaleX(-1); /* Flip along the y-axis */
+}
+
 
 .Game1-bg {
   background-image: url("./images/surfsup.gif");
@@ -131,13 +139,118 @@
 }
 
 .audioContainer {
-  position: absolute;
-  top: 89%;
-  right: 94.6%;
-
+  position: fixed;
+  top: 3.8%;
+  left: 5%; /* Adjust this value */
 }
 
 .aboutContainer {
   display: flex;
   flex-direction: row;
 }
+
+.speechbubble {
+  position: fixed;
+  top: 23%;
+  right: 68%;
+}
+
+.speechwording {
+  color : black;
+  position: fixed;
+  top: 26.5%;
+  right: 69.4%;
+  font-size: 15px;
+}
+
+.speechbubble1 {
+  position: fixed;
+  top: 17%;
+  right: 18%;
+  transform: scaleX(-1);
+}
+
+.speechwording1 {
+  color : black;
+  position: fixed;
+  top: 21.5%;
+  right: 19.8%;
+  font-size: 17px;
+}
+
+.duck1 {
+  position: fixed;
+  top: 75%;
+  left: -5%; /* Start position */
+  animation: moveDuck 13s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveDuck {
+  0% {
+    transform: translateX(-100px); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* End position */
+  }
+}
+
+.baby_duck {
+  position: fixed;
+  top: 80%;
+  left: -10%; /* Start position */
+  animation: moveBDuck 13s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveBDuck {
+  0% {
+    transform: translateX(-100px); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* End position */
+  }
+}
+
+.baby_duck1 {
+  position: fixed;
+  top: 80%;
+  left: -15%; /* Start position */
+  animation: moveB1Duck 13s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveB1Duck {
+  0% {
+    transform: translateX(-100px); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* End position */
+  }
+}
+
+.baby_duck2 {
+  position: fixed;
+  top: 80%;
+  left: -20%; /* Start position */
+  animation: moveB2Duck 13s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveB2Duck {
+  0% {
+    transform: translateX(-100px); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* End position */
+  }
+}
+
+.cattails {
+  position: fixed;
+  top: 81%;
+  left: 0%;
+}
+
+.cattail {
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed */
+}
+
+

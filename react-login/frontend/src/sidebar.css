@@ -43,6 +43,24 @@
     padding: 10px;
   }
 
+  .link {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-family: 'Frogie';
+    font-size: 28px;
+    text-align: center;
+    cursor: pointer;
+    width: 55%;
+    padding: 10px;
+  }
+
+  .link:hover {
+    color: rgb(79, 177, 184);
+  }
+
   input[type='sidebarButton']:hover {
     color: rgb(79, 177, 184);
   }
