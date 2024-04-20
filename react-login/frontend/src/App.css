@@ -288,15 +288,15 @@ header {
   font-size: 25px;
   display: block;
   position: fixed;
-  left: 28%;
+  right : 0.5%;
   top: 0%;
   color: white;
   margin: 8px;
-  border-radius: 50px;
+  border-radius: 10px;
   background: rgb(18, 109, 170);
   padding: 20px;
-  width: 50%;
-  height: 175px;
+  width: 30%;
+  height: auto;
 }
 
 #button-container {
@@ -319,7 +319,7 @@ header {
 }
 
 .Game1-bg .option-button {
-  position: inherit;
+  position: fixed;
   overflow: hidden;
   background-color: #286ea8;
   border: none;
@@ -400,4 +400,13 @@ header {
 
 #play-again:hover {
   background-color: #085da3;
+}
+
+.right-rectangle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 32%; /* Adjust width as needed */
+  background-color: black;
 }

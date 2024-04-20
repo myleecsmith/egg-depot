@@ -227,6 +227,7 @@ function DuckTrivia() {
           <div className="Sidebarbtn">
             <img src={sidebarButtonImg} alt="sidebar button" height={100} onClick={toggleSidebar} />
           </div>
+          <div className="right-rectangle"></div>
           {/* Sidebar component */}
           <Sidebar isOpen={isOpen} toggle={toggleSidebar} toggleAudio={toggleAudio} isAudioPlaying={isAudioPlaying} clearTimer={clearTimer} />
           {/* Main content */}
