@@ -253,4 +253,151 @@
   margin-right: 10px; /* Adjust as needed */
 }
 
+#duck-sprite {
+  background-image: url("./images/duck_sprite1.gif");
+  width: 500px;
+  height: 500px;
+  scale: 0.5;
+  position: absolute;
+  top: 30%;
+  left: 0%; /* Adjust this value */
+  /* transform: translateY(-40%); */
+}
 
+#surfboard-sprite {
+  background-image: url("./images/surfboard.png");
+  height: 500px;
+  width: 500px;
+  scale: 0.5;
+  position: absolute;
+  top: 38%;
+  left: 2%;
+}
+  
+header {
+  position: relative;
+  top: -150px;
+  padding: 10px;
+}
+
+#game-title {
+  padding: 40px;
+}
+
+#bubble {
+  font-size: 25px;
+  display: block;
+  position: fixed;
+  left: 28%;
+  top: 0%;
+  color: white;
+  margin: 8px;
+  border-radius: 50px;
+  background: rgb(18, 109, 170);
+  padding: 20px;
+  width: 50%;
+  height: 175px;
+}
+
+#button-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  width: 20%;
+  transform: translateX(400%);
+}
+
+#score, #timer {
+  color: white;
+}
+
+.Game1-bg #button-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Game1-bg .option-button {
+  position: inherit;
+  overflow: hidden;
+  background-color: #286ea8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  cursor: pointer;
+  height: 150px;
+  width: 200px;
+  line-height: 25px;
+  font-family: Frogie, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.Game1-bg .option-button.option-1 {
+  top: 10%;
+  left: 25px;
+}
+
+.Game1-bg .option-button.option-2 {
+  top: 35%;
+  left: 25px;
+}
+
+.Game1-bg .option-button.option-3 {
+  top: 60%;
+  left: 25px;
+}
+
+.Game1-bg .option-button.option-0 {
+  top: 85%;
+  left: 25px;
+}
+
+.option-button:hover {
+  background-color: #085da3;
+}
+
+.option-button.correct {
+  background-color: green;
+}
+
+.option-button.incorrect {
+  background-color: red;
+}
+
+
+#play-again {
+  display: hidden;
+  background-color: #286ea8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 24px;
+  font-family:
+  Frogie,
+  -apple-system,
+  BlinkMacSystemFont,
+  Segoe UI,
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  Fira Sans,
+  Droid Sans,
+  Helvetica Neue,
+  sans-serif;
+}
+
+#play-again:hover {
+  background-color: #085da3;
+}

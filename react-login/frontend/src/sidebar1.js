@@ -5,18 +5,16 @@ import './sidebar.css';
 import { useNavigate } from 'react-router-dom';
 import closeIcon from './images/close_icon.png';
 
-const Sidebar = ({ isOpen, toggle, toggleAudio, isAudioPlaying, clearTimer }) => {
+const Sidebar1 = ({ isOpen, toggle, toggleAudio, isAudioPlaying}) => {
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = React.useState(false);
 
   const navAbout = () => {
-    clearTimer();
     navigate('/aboutUs');
     toggle();
   };
 
   const navLogin = () => {
-    clearTimer();
     if (loggedIn) {
       setLoggedIn(false);
       navigate('/');
@@ -27,7 +25,6 @@ const Sidebar = ({ isOpen, toggle, toggleAudio, isAudioPlaying, clearTimer }) =>
   };
 
   const navHome = () => {
-    clearTimer();
     navigate('/Welcome');
     toggle();
   };
@@ -73,4 +70,4 @@ const Sidebar = ({ isOpen, toggle, toggleAudio, isAudioPlaying, clearTimer }) =>
   );
 };
 
-export default Sidebar;
+export default Sidebar1;

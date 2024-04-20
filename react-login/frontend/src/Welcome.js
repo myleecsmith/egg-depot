@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Sidebar from './sidebar'; // Assuming Sidebar component is in the same directory
+import Sidebar from './sidebar1'; // Assuming Sidebar component is in the same directory
 import './App.css'; // Assuming you have a CSS file for styling
 import sound from './WelcomeSounds.wav';
 import sidebarButtonImage from './images/sidebar_button.png'; // Importing the sidebar button image
