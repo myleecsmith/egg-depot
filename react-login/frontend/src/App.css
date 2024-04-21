@@ -85,17 +85,25 @@
 
 .Flag1 {
   position: fixed;
-  top: 34.7%;
-  left: 72%; /* Adjust this value */
+  top: 24%;
+  left: 84%; /* Adjust this value */
   transform: translateY(-34.7%) rotate(-35deg);
 }
 
 .Duck_Sprite {
   position: fixed;
-  top: 40%;
+  top: 37%;
   left: 9%; /* Adjust this value */
   transform: translateY(-40%);
 }
+
+.Duck_Sprite2 {
+  position: fixed;
+  top: 35%;
+  left: 72%; /* Adjust this value */
+  transform: translateY(-40%) scaleX(-1); /* Flip along the y-axis */
+}
+
 
 .Game1-bg {
   background-image: url("./images/surfsup.gif");
@@ -131,10 +139,9 @@
 }
 
 .audioContainer {
-  position: absolute;
-  top: 89%;
-  right: 94.6%;
-
+  position: fixed;
+  top: 3.8%;
+  left: 5%; /* Adjust this value */
 }
 
 .aboutContainer {
@@ -163,4 +170,350 @@
   position: fixed;
   top: 72%;
   left: 82%;
+}
+
+.speechbubble {
+  position: fixed;
+  top: 23%;
+  right: 68%;
+}
+
+.speechwording {
+  color : black;
+  position: fixed;
+  top: 26.5%;
+  right: 69.4%;
+  font-size: 15px;
+}
+
+.speechbubble1 {
+  position: fixed;
+  top: 17%;
+  right: 18%;
+  transform: scaleX(-1);
+}
+
+.speechwording1 {
+  color : black;
+  position: fixed;
+  top: 21.5%;
+  right: 19.8%;
+  font-size: 17px;
+}
+
+.duck1 {
+  position: fixed;
+  top: 75%;
+  left: -5%; /* Start position */
+  animation: moveDuck 13s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveDuck {
+  0% {
+    transform: translateX(-100px); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* End position */
+  }
+}
+
+.baby_duck {
+  position: fixed;
+  top: 80%;
+  left: -10%; /* Start position */
+  animation: moveBDuck 13s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveBDuck {
+  0% {
+    transform: translateX(-100px); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* End position */
+  }
+}
+
+.baby_duck1 {
+  position: fixed;
+  top: 80%;
+  left: -15%; /* Start position */
+  animation: moveB1Duck 13s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveB1Duck {
+  0% {
+    transform: translateX(-100px); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* End position */
+  }
+}
+
+.baby_duck2 {
+  position: fixed;
+  top: 80%;
+  left: -20%; /* Start position */
+  animation: moveB2Duck 13s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveB2Duck {
+  0% {
+    transform: translateX(-100px); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* End position */
+  }
+}
+
+.cattails {
+  position: fixed;
+  top: 81%;
+  left: 0%;
+}
+
+.cattail {
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed */
+}
+
+#duck-sprite {
+  background-image: url("./images/duck_sprite1.gif");
+  width: 500px;
+  height: 500px;
+  scale: 0.5;
+  position: absolute;
+  top: 30%;
+  left: 0%; /* Adjust this value */
+  /* transform: translateY(-40%); */
+}
+
+#surfboard-sprite {
+  background-image: url("./images/surfboard.png");
+  height: 500px;
+  width: 500px;
+  scale: 0.5;
+  position: absolute;
+  top: 38%;
+  left: 2%;
+}
+  
+header {
+  position: relative;
+  top: -150px;
+  padding: 10px;
+}
+
+#game-title {
+  padding: 40px;
+}
+
+#bubble {
+  font-size: 25px;
+  display: block;
+  position: fixed;
+  right : 0.5%;
+  top: 0%;
+  color: white;
+  margin: 8px;
+  border-radius: 10px;
+  background: rgb(18, 109, 170);
+  padding: 20px;
+  width: 30%;
+  height: auto;
+}
+
+#button-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  width: 20%;
+  transform: translateX(400%);
+}
+
+#score, #timer {
+  color: white;
+}
+
+.Game1-bg #button-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Game1-bg .option-button {
+  position: fixed;
+  overflow: hidden;
+  background-color: #286ea8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  cursor: pointer;
+  height: 150px;
+  width: 200px;
+  line-height: 25px;
+  font-family: Frogie, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.Game1-bg .option-button.option-1 {
+  top: 10%;
+  left: 25px;
+}
+
+.Game1-bg .option-button.option-2 {
+  top: 35%;
+  left: 25px;
+}
+
+.Game1-bg .option-button.option-3 {
+  top: 60%;
+  left: 25px;
+}
+
+.Game1-bg .option-button.option-0 {
+  top: 85%;
+  left: 25px;
+}
+
+.option-button:hover {
+  background-color: #085da3;
+}
+
+.option-button.correct {
+  background-color: green;
+}
+
+.option-button.incorrect {
+  background-color: red;
+}
+
+
+#play-again {
+  display: hidden;
+  background-color: #286ea8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 24px;
+  font-family:
+  Frogie,
+  -apple-system,
+  BlinkMacSystemFont,
+  Segoe UI,
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  Fira Sans,
+  Droid Sans,
+  Helvetica Neue,
+  sans-serif;
+}
+
+#play-again:hover {
+  background-color: #085da3;
+}
+
+/* Styles for the image container */
+.judge {
+  position: fixed; /* Change to relative positioning */
+  text-align: center;
+  top: 10%; /* Position it vertically in the middle */
+  left: 30%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the paragraph */
+.judge p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 88%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  font-size: 15px;
+  color: white; /* Set text color to white or appropriate color */
+  white-space: nowrap;
+}
+
+/* Styles for the image container */
+.judge1 {
+  position: fixed; /* Change to relative positioning */
+  text-align: center;
+  top: 10%; /* Position it vertically in the middle */
+  left: 40%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the paragraph */
+.judge1 p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 88%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  font-size: 15px;
+  color: white; /* Set text color to white or appropriate color */
+  white-space: nowrap;
+}
+
+/* Styles for the image container */
+.judge2 {
+  position: fixed; /* Change to relative positioning */
+  text-align: center;
+  top: 10%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the paragraph */
+.judge2 p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 88%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  font-size: 15px;
+  color: white; /* Set text color to white or appropriate color */
+  white-space: nowrap;
+}
+
+/* Styles for the image container */
+.judge3 {
+  position: fixed; /* Change to relative positioning */
+  text-align: center;
+  top: 10%; /* Position it vertically in the middle */
+  left: 60%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the paragraph */
+.judge3 p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 88%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  font-size: 15px;
+  color: white; /* Set text color to white or appropriate color */
+  white-space: nowrap;
+}
+
+.Judgepannel {
+  position : fixed;
+  width: 600px; /* adjust size as needed */
+  height: 200px; /* adjust size as needed */
+  background-color: #286ea8;
+  border-radius: 20px; /* adjust border radius for rounded corners */
+  position: absolute;
+  top: 13%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  color : white;
 }
