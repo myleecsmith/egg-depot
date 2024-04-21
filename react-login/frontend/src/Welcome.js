@@ -4,8 +4,8 @@ import Sidebar from './sidebar1'; // Assuming Sidebar component is in the same d
 import './App.css'; // Assuming you have a CSS file for styling
 import sound from './WelcomeSounds.wav';
 import sidebarButtonImage from './images/sidebar_button.png'; // Importing the sidebar button image
-import soundOn from './images/sound_on2.png';
-import soundOff from './images/sound_off2.png';
+import soundOn from './images/sound_on3.png';
+import soundOff from './images/sound_off3.png';
 import speechbubble from './images/bubble.png';
 
 const Welcome = (props) => {

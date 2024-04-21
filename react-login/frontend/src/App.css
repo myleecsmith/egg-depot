@@ -149,6 +149,29 @@
   flex-direction: row;
 }
 
+.teamMemberContainer {
+  display: flex;
+  padding: 10px;
+}
+
+.Tori_Duck {
+  position: fixed;
+  top: 72%;
+  left: 56%;
+}
+
+.Ramses_Duck {
+  position: fixed;
+  top: 72%;
+  left: 31%;
+}
+
+.Devin_Duck {
+  position: fixed;
+  top: 72%;
+  left: 82%;
+}
+
 .speechbubble {
   position: fixed;
   top: 23%;
