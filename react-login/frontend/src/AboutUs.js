@@ -20,21 +20,50 @@ const AboutUs = (props) => {
       </div>
       <br></br>
       <div className='aboutContainer'>
-        <div id="aboutbg">
-        <h1>Mylee Smith</h1>
-          <p>I like sailing, horses, and surfing.</p>
+        <div className='teamMemberContainer'>
+          <div id="aboutbg">
+          <h1>Mylee Smith</h1>
+            <p>Year: Junior</p>
+            <p>Major: Computer Engineering</p>
+            <p>Project Role: Visuals/Frontend</p>
+            <p>I like sailing, horses, and surfing.</p>
+          </div>
         </div>
-        <div id="aboutbg">
-        <h1>Ramses Ziane-Cherif</h1>
-          <p></p>
+        <div className='teamMemberContainer'>
+          <div id="aboutbg">
+          <h1>Ramses Ziane-Cherif</h1>
+            <p>Year: Junior</p>
+            <p>Major: Computer Engineering</p>
+            <p>Project Role: Backend</p>
+            <p></p>
+            <div className='Ramses_Duck'>
+            <img src={require('./images/ramses_duck.gif')} alt="duck2" height={200} />
+            </div>
+          </div>
         </div>
-        <div id="aboutbg">
-        <h1>Victoria Pineda</h1>
-          <p></p>
+        <div className='teamMemberContainer'>
+          <div id="aboutbg">
+          <h1>Victoria Pineda</h1>
+            <p>Year: Sophomore</p>
+            <p>Major: Computer Science</p>
+            <p>Project Role: Research/Frontend</p>
+            <p></p>
+            <div className='Tori_Duck'>
+            <img src={require('./images/tori_duck.gif')} alt="duck3" height={200} />
+            </div>
+          </div>
         </div>
-        <div id="aboutbg">
-        <h1>Devin Dubois</h1>
-          <p></p>
+        <div className='teamMemberContainer'>
+          <div id="aboutbg">
+          <h1>Devin Dubois</h1>
+            <p>Year: Junior</p>
+            <p>Major: Computer Science</p>
+            <p>Project Role: Databases/Backend</p>
+            <p></p>
+            <div className='Devin_Duck'>
+            <img src={require('./images/devin_duck.gif')} alt="duck4" height={200} />
+            </div>
+          </div>
         </div>
       </div>
         <div className="Sidebarbtn1">

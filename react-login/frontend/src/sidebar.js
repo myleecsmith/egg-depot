@@ -48,8 +48,8 @@ const Sidebar = ({ isOpen, toggle, toggleAudio, isAudioPlaying }) => {
       <input
           className={'inputButton'}
           type="sidebarButton"
-          onClick={navAbout}
-          value={'About Us'}
+          onClick={navHome}
+          value={'Home'}
       />
         <li><a href="https://donate.ducks.org/yearend/ye2023/donateonlinesecure.aspx?promokey=yearend23&id=13906&_ga=2.105476736.269927928.1712091537-2041326361.1712091536&_gl=1*5vwfw0*_ga*MjA0MTMyNjM2MS4xNzEyMDkxNTM2*_ga_2X0ECQZQ09*MTcxMjEwMDE0OS4zLjEuMTcxMjEwMDE1MS41OC4wLjA." 
         target="_blank">
@@ -57,8 +57,8 @@ const Sidebar = ({ isOpen, toggle, toggleAudio, isAudioPlaying }) => {
       <input
           className={'inputButton'}
           type="sidebarButton"
-          onClick={navHome}
-          value={'Home'}
+          onClick={navAbout}
+          value={'About Us'}
       />
       <input
           className={'inputButton'}

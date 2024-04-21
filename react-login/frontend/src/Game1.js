@@ -4,6 +4,8 @@ import Sidebar from './sidebar';
 import './App.css';
 import sound from './SurfnTurf.wav';
 import sidebarButtonImg from './images/sidebar_button.png';
+import soundOn from './images/sound_on3.png';
+import soundOff from './images/sound_off3.png';
 
 const Game1 = (props) => {
   const { loggedIn } = props;
@@ -40,6 +42,12 @@ const Game1 = (props) => {
               Your browser does not support the audio element.
             </audio>
           )}
+          {/* Button to toggle audio */}
+          <div className='audioContainer'>
+            <li onClick={toggleAudio}>
+              {isAudioPlaying ? <img src={soundOn} height={60}/> : <img src={soundOff} height={60}/>}
+            </li>
+          </div>
           {/* Sidebar button */}
           <div className="Sidebarbtn">
             <img src={sidebarButtonImg} alt="sidebar button" height={100} onClick={toggleSidebar} />
