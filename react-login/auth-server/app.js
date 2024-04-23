@@ -65,6 +65,51 @@ app.post('/auth', async (req, res) => {
     return res.status(500).json({ message: 'Internal server error' });
   }
 });
+// Set donor status for the current user
+app.post('/setDonor', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    // Find the user by email
+    const user = await User.findOne({ email });
+
+    // If user exists, update donor status to true
+    if (user) {
+      user.donor = true;
+      await user.save();
+      return res.status(200).json({ message: 'Donor status updated successfully' });
+    } else {
+      // If user does not exist, return error
+      return res.status(404).json({ message: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error setting donor status:', error);
+    return res.status(500).json({ message: 'Internal server error' });
+  }
+});
+// Increase the level of the current user by one
+app.post('/increaseLevel', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    // Find the user by email
+    const user = await User.findOne({ email });
+
+    // If user exists, increment the level by one
+    if (user) {
+      // Convert level to number and increment by one
+      user.Level = (parseInt(user.Level) + 1).toString();
+      await user.save();
+      return res.status(200).json({ message: 'User level increased successfully' });
+    } else {
+      // If user does not exist, return error
+      return res.status(404).json({ message: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error increasing user level:', error);
+    return res.status(500).json({ message: 'Internal server error' });
+  }
+});
 
 // Verify endpoint to check if JWT token is valid
 app.post('/verify', (req, res) => {
