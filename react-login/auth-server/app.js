@@ -39,32 +39,49 @@ app.post('/auth', async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Get the count of existing users to determine the new User_ID
-    const userCount = await User.countDocuments();
-    const newUser_ID = userCount + 1;
+    // Check if the email already exists
+    const existingUser = await User.findOne({ email });
 
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    if (existingUser) {
+      // Email exists, check password
+      const passwordMatch = await bcrypt.compare(password, existingUser.Password);
+      if (!passwordMatch) {
+        // Password doesn't match
+        return res.status(401).json({ message: 'Incorrect password' });
+      }
 
-    // Create the new user with default values for donor and Level
-    const newUser = await User.create({
-      User_ID: newUser_ID,
-      email, // Changed Username to email
-      Password: hashedPassword,
-      donor: false,
-      Level: '1'
-    });
+      // Password matches, generate JWT token
+      const token = jwt.sign({ email }, jwtSecretKey);
+      return res.status(200).json({ message: 'success', token });
+    } else {
+      // Email doesn't exist, create a new account
+      // Get the count of existing users to determine the new User_ID
+      const userCount = await User.countDocuments();
+      const newUser_ID = userCount + 1;
 
-    // Generate JWT token
-    const token = jwt.sign({ email }, jwtSecretKey);
+      // Hash the password
+      const hashedPassword = await bcrypt.hash(password, 10);
+      // Create the new user with default values for donor and Level
+      const newUser = await User.create({
+        User_ID: newUser_ID,
+        email, // Changed Username to email
+        Password: hashedPassword,
+        donor: false,
+        Level: '1'
+      });
 
-    // Send success response with token
-    return res.status(200).json({ message: 'success', token });
+      // Generate JWT token
+      const token = jwt.sign({ email }, jwtSecretKey);
+
+      // Send success response with token
+      return res.status(200).json({ message: 'success', token });
+    }
   } catch (error) {
     console.error('Error in authentication:', error);
     return res.status(500).json({ message: 'Internal server error' });
   }
 });
+
 // Set donor status for the current user
 app.post('/setDonor', async (req, res) => {
   const { email } = req.body;
