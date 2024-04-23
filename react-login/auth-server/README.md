@@ -1,3 +1,6 @@
-Must install dependency Mongoose: \n
-cd into egg-depot\react-login\auth-server \n
+Must install dependency Mongoose: 
+
+cd into egg-depot\react-login\auth-server
+
 npm install mongoose
+
