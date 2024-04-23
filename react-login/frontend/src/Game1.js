@@ -7,7 +7,7 @@ import soundOn from './images/sound_on3.png';
 import soundOff from './images/sound_off3.png';
 import judge from './images/judge.png';
 import judge1 from './images/judge1.png';
-let timer;
+let timer; 
 const questions = [{question: "Which of the following is NOT a habitat that ducks live in?", options: ["Wetlands", "Grasslands", "Deserts", "Rivers"], answer: "Deserts"}, 
                    {question: "How long can ducks live on average?", options: ["10-20 years", "20-30 years", "30-40 years", "40-50 years"], answer: "10-20 years"}, 
                    {question: "Which of the following is NOT a food that ducks eat?", options: ["Fish", "Insects", "Seeds", "Raw meat"], answer: "Raw meat"}, 
@@ -36,230 +36,256 @@ const questions = [{question: "Which of the following is NOT a habitat that duck
 let answeredQuestions = 0;
 let score = 0;
 let streak = 0;
-let index;
-let usedQuestions = [];
-let timeLeft = 10; // 10 seconds
+let index; // index of current question
+let usedQuestions = []; // used question bank to avoid repeating questions
+let timeLeft = 10; // in seconds
 
+// stops the game timer
 const clearTimer = () => {
   clearInterval(timer);
 };
 
 function DuckTrivia() {
-    const [currentQuestion, setCurrentQuestion] = useState(Math.floor(Math.random() * questions.length));
-    
-    const displayQuestion = () => {
-      clearInterval(timer);
-      timer = 10;
-      startTimer();
-      usedQuestions.push(currentQuestion);
-      return (
-        <div>
-          <div id="bubble">
-            <h2 id="question">{questions[currentQuestion].question}</h2>
-          </div>
-          <div id="button-container">
-          {questions[currentQuestion].options.map((option, index) => (
-              <button
-                key={index}
-                className={`option-button option-${index}`} // Assign dynamic class names
-                onClick={() => checkAnswer(option)}
-                id={`option-${index}`}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-    
-          <div id="score">Score: {score}</div>
-          <div id="timer"></div>
-          <div id="judge1"></div>
-          <div id="judge2"></div>
-          <div id="judge3"></div>
-          <div id="judge4"></div>
-          <div className={'play-again'}>
-            <button id="play-again" hidden onClick={() => restartGame()} >Play Again!</button>
-          </div>
-        </div>
-      );
-    };    
-
-    const [isOpen, setIsOpen] = useState(false);
-    const [isAudioPlaying, setIsAudioPlaying] = useState(true);
-    
-    useEffect(() => {
-      const isAudioPlayingStr = localStorage.getItem('isAudioPlaying');
-      const isAudioPlaying = isAudioPlayingStr === 'true';
-      setIsAudioPlaying(isAudioPlaying);
-    }, []);
+  // chooses a random question from the question bank
+  const [currentQuestion, setCurrentQuestion] = useState(Math.floor(Math.random() * questions.length));
   
-    useEffect(() => {
-      localStorage.setItem('isAudioPlaying', isAudioPlaying.toString());
-    }, [isAudioPlaying]);
-  
-    const toggleSidebar = () => {
-      setIsOpen(!isOpen);
-    };
-  
-    const toggleAudio = () => {
-      setIsAudioPlaying(!isAudioPlaying);
-    };
+  const displayQuestion = () => {
+    clearInterval(timer); // clears the timer
+    timer = 10; // sets the number of seconds for the timer
+    startTimer(); // starts the timer
+    usedQuestions.push(currentQuestion); // add current question to used question bank
 
-    const checkAnswer = (selectedOption) => {
-        const correctAnswer = questions[currentQuestion].answer;
-        clearInterval(timer);
-        
-        if (selectedOption === correctAnswer) {
-          document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.add('correct');
-          streak++;
-          score += (timeLeft + 1) * streak;
-          // alert("Correct!");
-        } else {
-          document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.add('incorrect');
-          streak = 0;
-          // alert("Incorrect. The correct answer is: " + correctAnswer);
-        }
-        setTimeout(() => {
-          document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.remove('correct'); 
-          document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.remove('incorrect');
-          nextQuestion()}, 2000);  
-    };
-
-    const nextQuestion = () => {
-        answeredQuestions++;
-        if (answeredQuestions == 10) {
-          gameOver();
-        }
-        console.log(`Total questions answered: ${answeredQuestions}`);
-        timeLeft = 10;
-        do {
-          index = Math.floor(Math.random() * questions.length);
-          if (usedQuestions.length === questions.length) {
-            usedQuestions = [];
-          }
-        } while (usedQuestions.includes(index));
-
-        setCurrentQuestion(index);
-    };
-
-    const startTimer = () => {
-      timer = setInterval(() => {
-          document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
-          timeLeft--;
-  
-          if (timeLeft < 0) {
-              clearInterval(timer);
-              nextQuestion();
-          }
-      }, 1000);
-  };
-
-    const gameOver = () => {
-      // clear game elements
-      clearInterval(timer);
-      document.getElementById('question').style.display = 'none';
-      document.getElementById('bubble').style.display = 'none';
-      document.getElementById('option-0').style.display = 'none';
-      document.getElementById('option-1').style.display = 'none';
-      document.getElementById('option-2').style.display = 'none';
-      document.getElementById('option-3').style.display = 'none';
-      document.getElementById('timer').style.display = 'none';
-      document.getElementById('play-again').textContent = 'Play again!';
-      document.getElementById('play-again').style.display = 'inline-block';
-
-      document.getElementById('judge1').style.display = 'block';
-      document.getElementById('judge2').style.display = 'block';
-      document.getElementById('judge3').style.display = 'block';
-      document.getElementById('judge4').style.display = 'block';
-
-      // show judges scores
-      document.getElementById('judge1').textContent = `Rating: ${parseFloat(((Math.random()*4)+(score/50)-2).toFixed(1))}`;
-      document.getElementById('judge2').textContent = `Rating: ${parseFloat(((Math.random()*4)+(score/50)-2).toFixed(1))}`;
-      document.getElementById('judge3').textContent = `Rating: ${parseFloat(((Math.random()*4)+(score/50)-2).toFixed(1))}`;
-      document.getElementById('judge4').textContent = `Rating: ${parseFloat(((Math.random()*4)+(score/50)-2).toFixed(1))}`;
-    }
-
-    const restartGame = () => {
-      nextQuestion();
-      score = 0;
-      streak = 0;
-      answeredQuestions = 0;
-      usedQuestions = [];
-
-      document.getElementById('question').style.display = 'block';
-      document.getElementById('bubble').style.display = 'block';
-      document.getElementById('option-0').style.display = 'inline-block';
-      document.getElementById('option-1').style.display = 'inline-block';
-      document.getElementById('option-2').style.display = 'inline-block';
-      document.getElementById('option-3').style.display = 'inline-block';
-      document.getElementById('timer').style.display = 'block';
-      document.getElementById('play-again').style.display = 'none';
-
-      // hide judges
-      document.getElementById('judge1').style.display = 'none';
-      document.getElementById('judge2').style.display = 'none';
-      document.getElementById('judge3').style.display = 'none';
-      document.getElementById('judge4').style.display = 'none';
-
-      displayQuestion();
-    }
-
+    // return html containing question, answer choices, current score, and time remaining
     return (
-      <div className="Game1-bg">
-        <div className="mainContainer">
-          {/* Adding audio element for WelcomeSounds */}
-          {isAudioPlaying && (
-            <audio autoPlay loop>
-              <source src={sound} type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
-          )}
-          {/* Button to toggle audio */}
-          <div className='audioContainer'>
-            <li onClick={toggleAudio}>
-              {isAudioPlaying ? <img src={soundOn} height={35}/> : <img src={soundOff} height={35}/>}
-            </li>
-          </div>
-          <div className="surfboard">
-            <img src={require('./images/surfboard.png')} alt="surfboard" height={350} />
-          </div>
-          <div className="Duck_Sprite_g">
-            <img src={require('./images/duck_sprite1.gif')} alt="ducky" height={300} />
-          </div>
-          {/* Sidebar button */}
-          <div className="Sidebarbtn">
-            <img src={sidebarButtonImg} alt="sidebar button" height={100} onClick={toggleSidebar} />
-          </div>
-          {/*<div className="Judgepannel">Judge Pannel</div> 
-          <div className="judge">
-            <img src={judge} alt="duck" height={150} />
-            <p>Judge1 Score:</p>
-          </div>
-          <div className="judge1">
-            <img src={judge1} alt="duck" height={150} />
-            <p>Judge2 Score:</p>
-          </div>
-          <div className="judge2">
-            <img src={judge} alt="duck" height={150} />
-            <p>Judge3 Score:</p>
-          </div>
-          <div className="judge3">
-            <img src={judge1} alt="duck" height={150} />
-            <p>Judge4 Score:</p>
-        </div>*/}
-          {/* Sidebar component */}
-          <Sidebar isOpen={isOpen} toggle={toggleSidebar} toggleAudio={toggleAudio} isAudioPlaying={isAudioPlaying} clearTimer={clearTimer} />
-          {/* Main content */}
-          <div className={'titleContainer'}>
-            {/* Integrating displayQuestion */}
-            <div id="game-bg">
-              <main>
-                {displayQuestion()}
-              </main>
-            </div>
-          </div>
+      <div>
+        <div id="bubble">
+          <h2 id="question">{questions[currentQuestion].question}</h2>
+        </div>
+        <div id="button-container">
+        {questions[currentQuestion].options.map((option, index) => (
+            <button
+              key={index}
+              className={`option-button option-${index}`} // Assign dynamic class names
+              onClick={() => checkAnswer(option)}
+              id={`option-${index}`}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+  
+        <div id="score">Score: {score}</div>
+        <div id="timer"></div>
+        <div id="judge1"></div>
+        <div id="judge2"></div>
+        <div id="judge3"></div>
+        <div id="judge4"></div>
+        <div className={'play-again'}>
+          <button id="play-again" hidden onClick={() => restartGame()} >Play Again!</button>
         </div>
       </div>
     );
-  }  
+  };    
+
+  //configure sidebar and game audio
+  const [isOpen, setIsOpen] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
+  
+  // enables game audio
+  useEffect(() => {
+    const isAudioPlayingStr = localStorage.getItem('isAudioPlaying');
+    const isAudioPlaying = isAudioPlayingStr === 'true';
+    setIsAudioPlaying(isAudioPlaying);
+  }, []);
+
+  // updates localStorage whenever the 'isAudioPlaying' state changes to maintain its state across sessions
+  useEffect(() => {
+    localStorage.setItem('isAudioPlaying', isAudioPlaying.toString());
+  }, [isAudioPlaying]);
+
+  // toggles sidesbar
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // toggles audio
+  const toggleAudio = () => {
+    setIsAudioPlaying(!isAudioPlaying);
+  };
+
+  // checks user input for correctness, clears timer, changes formatting depending on correctness, and handles score/streak calculations
+  const checkAnswer = (selectedOption) => {
+      const correctAnswer = questions[currentQuestion].answer; // fetches correct answer
+      clearInterval(timer);
+      
+      // changes button background to green if the user input is correct, increments streak, and adds to score
+      if (selectedOption === correctAnswer) {
+        document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.add('correct');
+        streak++;
+        score += (timeLeft + 1) * streak;
+      } 
+      // changes button background to red if the user input is incorrect and resets streak
+      else {
+        document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.add('incorrect');
+        streak = 0;
+      }
+      // waits 2 seconds, then resets button backgrounds and goes to the next question
+      setTimeout(() => {
+        document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.remove('correct'); 
+        document.getElementById(`option-${questions[currentQuestion].options.indexOf(selectedOption)}`).classList.remove('incorrect');
+        nextQuestion()}, 2000);  
+  };
+
+  // checks game condition, resets time remaining on the timer, and determines next question
+  const nextQuestion = () => {
+      answeredQuestions++;
+      // checks if game has reached the end
+      if (answeredQuestions == 10) {
+        gameOver();
+      }
+      console.log(`Total questions answered: ${answeredQuestions}`);
+      timeLeft = 10; // reset time remaining on the timer
+
+      // randomly selects a question that has not been used before
+      do {
+        index = Math.floor(Math.random() * questions.length);
+        if (usedQuestions.length === questions.length) {
+          usedQuestions = [];
+        }
+      } while (usedQuestions.includes(index));
+
+      setCurrentQuestion(index); // sets the current question to the new question randomly selected above
+  };
+
+  // starts timer and displays it on the 'timer' element
+  const startTimer = () => {
+    timer = setInterval(() => {
+        document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
+        timeLeft--;
+
+        // checks if time has run out; if so, resets timer and proceeds to next question
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            nextQuestion();
+        }
+    }, 1000);
+  };
+
+  const gameOver = () => {
+    // stops timer and clears game elements from the screen
+    clearInterval(timer);
+    document.getElementById('question').style.display = 'none';
+    document.getElementById('bubble').style.display = 'none';
+    document.getElementById('option-0').style.display = 'none';
+    document.getElementById('option-1').style.display = 'none';
+    document.getElementById('option-2').style.display = 'none';
+    document.getElementById('option-3').style.display = 'none';
+    document.getElementById('timer').style.display = 'none';
+    document.getElementById('play-again').textContent = 'Play again!';
+    document.getElementById('play-again').style.display = 'inline-block';
+
+    // displays judges
+    document.getElementById('judge1').style.display = 'block';
+    document.getElementById('judge2').style.display = 'block';
+    document.getElementById('judge3').style.display = 'block';
+    document.getElementById('judge4').style.display = 'block';
+
+    // show judges scores with random scoring deviating +/- 2 from the score percentage
+    document.getElementById('judge1').textContent = `Rating: ${parseFloat(((Math.random()*4)+(score/50)-2).toFixed(1))}`;
+    document.getElementById('judge2').textContent = `Rating: ${parseFloat(((Math.random()*4)+(score/50)-2).toFixed(1))}`;
+    document.getElementById('judge3').textContent = `Rating: ${parseFloat(((Math.random()*4)+(score/50)-2).toFixed(1))}`;
+    document.getElementById('judge4').textContent = `Rating: ${parseFloat(((Math.random()*4)+(score/50)-2).toFixed(1))}`;
+  }
+
+  // resets all game elements and restarts the game
+  const restartGame = () => {
+    nextQuestion(); // declares new question
+    score = 0; // resets score
+    streak = 0; // resets streak
+    answeredQuestions = 0; // reset question counter
+    usedQuestions = []; // resets used question bank
+
+    // redraw all game elements
+    document.getElementById('question').style.display = 'block';
+    document.getElementById('bubble').style.display = 'block';
+    document.getElementById('option-0').style.display = 'inline-block';
+    document.getElementById('option-1').style.display = 'inline-block';
+    document.getElementById('option-2').style.display = 'inline-block';
+    document.getElementById('option-3').style.display = 'inline-block';
+    document.getElementById('timer').style.display = 'block';
+    document.getElementById('play-again').style.display = 'none';
+
+    // hide judges and their scores
+    document.getElementById('judge1').style.display = 'none';
+    document.getElementById('judge2').style.display = 'none';
+    document.getElementById('judge3').style.display = 'none';
+    document.getElementById('judge4').style.display = 'none';
+
+    // starts game by displaying the new question
+    displayQuestion();
+  }
+
+  // returns the game container
+  return (
+    <div className="Game1-bg">
+      <div className="mainContainer">
+        {/* Adding audio element for WelcomeSounds */}
+        {isAudioPlaying && (
+          <audio autoPlay loop>
+            <source src={sound} type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        )}
+        {/* Button to toggle audio */}
+        <div className='audioContainer'>
+          <li onClick={toggleAudio}>
+            {isAudioPlaying ? <img src={soundOn} height={35}/> : <img src={soundOff} height={35}/>}
+          </li>
+        </div>
+        {/* Surfboard sprite */}
+        <div className="surfboard">
+          <img src={require('./images/surfboard.png')} alt="surfboard" height={350} />
+        </div>
+        {/* Player sprite */}
+        <div className="Duck_Sprite_g">
+          <img src={require('./images/duck_sprite1.gif')} alt="ducky" height={300} />
+        </div>
+        {/* Sidebar button */}
+        <div className="Sidebarbtn">
+          <img src={sidebarButtonImg} alt="sidebar button" height={100} onClick={toggleSidebar} />
+        </div>
+        {/* <div className="Judgepannel">Judge Pannel</div>
+        <div className="judge">
+          <img src={judge} alt="duck" height={150} />
+          <p>Judge1 Score:</p>
+        </div>
+        <div className="judge1">
+          <img src={judge1} alt="duck" height={150} />
+          <p>Judge2 Score:</p>
+        </div>
+        <div className="judge2">
+          <img src={judge} alt="duck" height={150} />
+          <p>Judge3 Score:</p>
+        </div>
+        <div className="judge3">
+          <img src={judge1} alt="duck" height={150} />
+          <p>Judge4 Score:</p>
+        </div> */}
+        {/* Sidebar component */}
+        <Sidebar isOpen={isOpen} toggle={toggleSidebar} toggleAudio={toggleAudio} isAudioPlaying={isAudioPlaying} clearTimer={clearTimer} />
+        {/* Main content */}
+        <div className={'titleContainer'}>
+          {/* Integrating displayQuestion */}
+          <div id="game-bg">
+            <main>
+              {/* displays the actual game */}
+              {displayQuestion()}
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}  
 
 export default DuckTrivia;
