@@ -19,6 +19,7 @@ const AboutUs = (props) => {
         About the Team
       </div>
       <br></br>
+      <p>Our mission was to raise awarness about ducks and the charity that supports them: Ducks Unlimited.</p>
       <div className='aboutContainer'>
         <div className='teamMemberContainer'>
           <div id="aboutbg">

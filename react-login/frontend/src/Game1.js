@@ -229,7 +229,7 @@ function DuckTrivia() {
           <div className="Sidebarbtn">
             <img src={sidebarButtonImg} alt="sidebar button" height={100} onClick={toggleSidebar} />
           </div>
-          <div className="Judgepannel">Judge Pannel</div>
+          {/*<div className="Judgepannel">Judge Pannel</div> 
           <div className="judge">
             <img src={judge} alt="duck" height={150} />
             <p>Judge1 Score:</p>
@@ -245,7 +245,7 @@ function DuckTrivia() {
           <div className="judge3">
             <img src={judge1} alt="duck" height={150} />
             <p>Judge4 Score:</p>
-          </div>
+        </div>*/}
           {/* Sidebar component */}
           <Sidebar isOpen={isOpen} toggle={toggleSidebar} toggleAudio={toggleAudio} isAudioPlaying={isAudioPlaying} clearTimer={clearTimer} />
           {/* Main content */}

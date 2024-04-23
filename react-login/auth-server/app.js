@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // MongoDB connection URI
-const dbURI = "mongodb+srv://devindubois03:lMRzhP3qH0o3rQR5@eggdata.oydljq9.mongodb.net/EggDepotData";
+const dbURI = "mongodb+srv://myleesmith:hIt1aYN0k6eKpH11@cluster0.8fbdakl.mongodb.net/"
 
 // Define a JWT secret key (should be isolated using environment variables for security)
 const jwtSecretKey = 'dsfdsfsdfdsvcsvdfgefg';
@@ -163,7 +163,7 @@ app.post('/check-account', async (req, res) => {
 });
 
 // Start the server
-const port = process.env.PORT || 3080;
+const port = 3080;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
