@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Sidebar from './sidebar1'; // Assuming Sidebar component is in the same directory
 import './App.css'; // Assuming you have a CSS file for styling
 import sidebarButtonImage from './images/sidebar_button.png'; // Importing the sidebar button image
+import mylees_duck from './images/mylee_duck.png';
 
 const AboutUs = (props) => {
   const { loggedIn, email } = props
@@ -27,7 +28,9 @@ const AboutUs = (props) => {
             <p>Year: Junior</p>
             <p>Major: Computer Engineering</p>
             <p>Project Role: Visuals/Frontend</p>
-            <p>I like sailing, horses, and surfing.</p>
+            <div className="Mylee_duck">
+            <img src={mylees_duck} alt="ducky" height={200} />
+          </div>
           </div>
         </div>
         <div className='teamMemberContainer'>
