@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // MongoDB connection URI
-const dbURI = "mongodb+srv://devindubois03:lMRzhP3qH0o3rQR5@eggdata.oydljq9.mongodb.net/EggDepotData";
+const dbURI = "mongodb+srv://tori:aJM8EVn3exWin0y2@eggdepot.edyuvos.mongodb.net/";
 
 // Define a JWT secret key (should be isolated using environment variables for security)
 const jwtSecretKey = 'dsfdsfsdfdsvcsvdfgefg';

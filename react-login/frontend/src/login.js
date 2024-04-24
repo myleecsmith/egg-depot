@@ -107,6 +107,7 @@ const Login = (props) => {
             <img src={cattail} alt="plant" height={125} />
             <img src={cattail} alt="plant" height={125} />
             <img src={cattail} alt="plant" height={125} />
+            <img src={cattail} alt="plant" height={125} />
       </div>
       <div className={'duck1'}>
       <img src={require('./images/duck1.gif')} alt="duck1" height={200} />
